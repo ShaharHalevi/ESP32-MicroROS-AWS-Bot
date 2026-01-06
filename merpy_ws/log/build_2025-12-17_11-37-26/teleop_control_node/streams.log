@@ -1,0 +1,37 @@
+[0.786s] Invoking command in '/home/shaharhalevi/ros2_workspaces/merpy_ws/src/teleop_control_node': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/shaharhalevi/ros2_workspaces/merpy_ws/build/teleop_control_node/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shaharhalevi/ros2_workspaces/merpy_ws/install/teleop_control_node/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/teleop_control_node build --build-base /home/shaharhalevi/ros2_workspaces/merpy_ws/build/teleop_control_node/build install --record /home/shaharhalevi/ros2_workspaces/merpy_ws/build/teleop_control_node/install.log --single-version-externally-managed install_data
+[1.016s] running egg_info
+[1.016s] creating ../../build/teleop_control_node/teleop_control_node.egg-info
+[1.034s] writing ../../build/teleop_control_node/teleop_control_node.egg-info/PKG-INFO
+[1.035s] writing dependency_links to ../../build/teleop_control_node/teleop_control_node.egg-info/dependency_links.txt
+[1.035s] writing entry points to ../../build/teleop_control_node/teleop_control_node.egg-info/entry_points.txt
+[1.035s] writing requirements to ../../build/teleop_control_node/teleop_control_node.egg-info/requires.txt
+[1.035s] writing top-level names to ../../build/teleop_control_node/teleop_control_node.egg-info/top_level.txt
+[1.035s] writing manifest file '../../build/teleop_control_node/teleop_control_node.egg-info/SOURCES.txt'
+[1.072s] reading manifest file '../../build/teleop_control_node/teleop_control_node.egg-info/SOURCES.txt'
+[1.073s] writing manifest file '../../build/teleop_control_node/teleop_control_node.egg-info/SOURCES.txt'
+[1.073s] running build
+[1.073s] running build_py
+[1.073s] creating /home/shaharhalevi/ros2_workspaces/merpy_ws/build/teleop_control_node/build
+[1.073s] creating /home/shaharhalevi/ros2_workspaces/merpy_ws/build/teleop_control_node/build/lib
+[1.073s] creating /home/shaharhalevi/ros2_workspaces/merpy_ws/build/teleop_control_node/build/lib/teleop_control_node
+[1.073s] copying teleop_control_node/__init__.py -> /home/shaharhalevi/ros2_workspaces/merpy_ws/build/teleop_control_node/build/lib/teleop_control_node
+[1.073s] copying teleop_control_node/teleop_control.py -> /home/shaharhalevi/ros2_workspaces/merpy_ws/build/teleop_control_node/build/lib/teleop_control_node
+[1.073s] running install
+[1.078s] running install_lib
+[1.097s] creating /home/shaharhalevi/ros2_workspaces/merpy_ws/install/teleop_control_node/lib/python3.12/site-packages/teleop_control_node
+[1.097s] copying /home/shaharhalevi/ros2_workspaces/merpy_ws/build/teleop_control_node/build/lib/teleop_control_node/__init__.py -> /home/shaharhalevi/ros2_workspaces/merpy_ws/install/teleop_control_node/lib/python3.12/site-packages/teleop_control_node
+[1.097s] copying /home/shaharhalevi/ros2_workspaces/merpy_ws/build/teleop_control_node/build/lib/teleop_control_node/teleop_control.py -> /home/shaharhalevi/ros2_workspaces/merpy_ws/install/teleop_control_node/lib/python3.12/site-packages/teleop_control_node
+[1.097s] byte-compiling /home/shaharhalevi/ros2_workspaces/merpy_ws/install/teleop_control_node/lib/python3.12/site-packages/teleop_control_node/__init__.py to __init__.cpython-312.pyc
+[1.097s] byte-compiling /home/shaharhalevi/ros2_workspaces/merpy_ws/install/teleop_control_node/lib/python3.12/site-packages/teleop_control_node/teleop_control.py to teleop_control.cpython-312.pyc
+[1.098s] running install_data
+[1.098s] creating /home/shaharhalevi/ros2_workspaces/merpy_ws/install/teleop_control_node/share/ament_index
+[1.098s] creating /home/shaharhalevi/ros2_workspaces/merpy_ws/install/teleop_control_node/share/ament_index/resource_index
+[1.098s] creating /home/shaharhalevi/ros2_workspaces/merpy_ws/install/teleop_control_node/share/ament_index/resource_index/packages
+[1.098s] copying resource/teleop_control_node -> /home/shaharhalevi/ros2_workspaces/merpy_ws/install/teleop_control_node/share/ament_index/resource_index/packages
+[1.098s] copying package.xml -> /home/shaharhalevi/ros2_workspaces/merpy_ws/install/teleop_control_node/share/teleop_control_node
+[1.098s] running install_egg_info
+[1.118s] Copying ../../build/teleop_control_node/teleop_control_node.egg-info to /home/shaharhalevi/ros2_workspaces/merpy_ws/install/teleop_control_node/lib/python3.12/site-packages/teleop_control_node-0.0.0-py3.12.egg-info
+[1.119s] running install_scripts
+[1.244s] Installing teleop_control script to /home/shaharhalevi/ros2_workspaces/merpy_ws/install/teleop_control_node/lib/teleop_control_node
+[1.244s] writing list of installed files to '/home/shaharhalevi/ros2_workspaces/merpy_ws/build/teleop_control_node/install.log'
+[1.265s] Invoked command in '/home/shaharhalevi/ros2_workspaces/merpy_ws/src/teleop_control_node' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/shaharhalevi/ros2_workspaces/merpy_ws/build/teleop_control_node/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shaharhalevi/ros2_workspaces/merpy_ws/install/teleop_control_node/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/teleop_control_node build --build-base /home/shaharhalevi/ros2_workspaces/merpy_ws/build/teleop_control_node/build install --record /home/shaharhalevi/ros2_workspaces/merpy_ws/build/teleop_control_node/install.log --single-version-externally-managed install_data
