@@ -19,6 +19,9 @@ This project bridges the gap between physical robotics and cloud intelligence. I
     
 *   **Visualization:** Amazon Grafana
     
+<p align="center">
+  <img src="Untitled diagram-2026-01-08-173201.png" alt="Robot CAD Render" width="700">
+</p>
 
 ### System Architecture: How It Works
 
