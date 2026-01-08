@@ -1,9 +1,9 @@
 Autonomous IoT Inventory Robot
 ==============================
 
-**An End-to-End Industry 4.0 Solution**
-
-\[Image Placeholder: Robot Scanning in Warehouse\]
+<p align="center">
+  <img src="Merpy_no_cam1.png" alt="Robot CAD Render" width="700">
+</p>
 
 ### **The Vision**
 
@@ -11,53 +11,53 @@ This project bridges the gap between physical robotics and cloud intelligence. I
 
 ### **Core Technologies**
 
-*   **Embedded Control:** ESP32-CAM & FreeRTOS
+*   **Embedded Control:** ESP32, ESP32-CAM & FreeRTOS
     
-*   **Robotics Middleware:** Micro-ROS & ROS 2
+*   **Robotics Middleware:** MQTT , Micro-ROS & ROS 2
     
 *   **Cloud Backend:** AWS IoT Core, Lambda, DynamoDB
     
 *   **Visualization:** Amazon Grafana
     
 
-### **System Architecture: How It Works**
+### System Architecture: How It Works
 
-The system creates a seamless data pipeline from the warehouse floor to the manager's screen in milliseconds:
+The system is designed with a **hybrid communication architecture** to ensure low-latency control and secure data transmission:
 
-**1\. The Edge (The Robot)**
-The robot is the eyes on the ground. Powered by an **ESP32-CAM**, it runs a dual-core architecture to handle image processing and motor control simultaneously. It operates as a native Micro-ROS node, autonomously navigating and decoding QR codes.
+**1. The Edge (The Hybrid Robot)** The robot, powered by the **ESP32-CAM**, runs two parallel network stacks to handle distinct tasks:
+* **Navigation (Micro-ROS):** The robot functions as a native ROS 2 node over UDP, listening for velocity commands (`/cmd_vel`) to execute precise motor control.
+* **Data Transmission (Local MQTT):** Independently, when a QR code is detected, the ESP32 publishes the decoded data via a lightweight MQTT client to the local network. This separation ensures that heavy video/data processing does not interfere with the real-time navigation loop.
 
-**2\. The Bridge (Local Gateway)**
-To ensure security and protocol translation, a Dockerized Micro-ROS Agent bridges the robot's UDP signals to the ROS 2 network. A custom **Python Gateway** then encrypts the data using X.509 certificates and forwards it to the cloud.
+**2. The Bridge (Local Gateway)** The local computer serves as the central traffic controller, running two distinct services to handle the split traffic:
+* **Micro-ROS Agent:** A Docker container that bridges the robot's UDP control signals to the global ROS 2 network.
+* **Secure IoT Gateway:** A custom Python script that listens to the local MQTT data stream, encrypts the payloads using **X.509 certificates**, and securely forwards the inventory records to the AWS Cloud.
 
-**3\. The Cloud (AWS Backend)**
-The data lands in **AWS IoT Core**, triggering a Serverless Lambda function. This function enriches the data with precise server-side timestamps and stores the inventory state in a NoSQL **DynamoDB** table.
+**3. The Cloud (AWS Backend)** The data lands in **AWS IoT Core**, triggering a Serverless Lambda function. This function enriches the data with precise server-side timestamps and stores the inventory state in a NoSQL **DynamoDB** table.
 
-**4\. The Insight (Dashboard)Grafana** visualizes the data instantly, showing live stock levels ("Apples: 50") and historical trends, enabling data-driven decision-making.
+**4. The Insight (Dashboard)** **Grafana** visualizes the data instantly, showing live stock levels (e.g., "Apples: 50") and historical trends, enabling data-driven decision-making.
 
-### **Engineering Highlights**
+<p align="center">
+  <img src="Screenshot from 2026-01-08 17-18-31.png" alt="Robot CAD Render" width="700">
+</p>
 
-**Problem:** Mechanical Instability
-**Solution:** The "Reverse Patrol" AlgorithmA common issue with differential drive robots is caster-wheel flutter when driving forward. I implemented a novel software solution that inverts the control logic, driving the robot "backwards" to drag the caster wheel for perfect stability.
-
-**Problem:** Resource Constraints
-**Solution:** FreeRTOS MultitaskingTo prevent the camera's heavy image processing from stalling the motors, the firmware pins the Vision Task to Core 1 and the Network/Control Task to Core 0, ensuring smooth, non-blocking operation.
 
 ### **Hardware Components**
 
-*   **Controller:** ESP32-CAM (AI-Thinker)
+*   **Controller:** ESP32-CAM (AI-Thinker), ESP32
     
 *   **Drive System:** L298N H-Bridge with DC Gear Motors
     
-*   **Power:** High-discharge 18650 Li-Ion Battery Pack (7.4V)
+*   **Power:** High-discharge 18650 Li-Ion Battery Pack (7.4V), Buck convertor
     
 *   **Chassis:** Custom Acrylic Platform
     
 
-\[Image Placeholder: Wiring Diagram / Circuit Board\]
+<p align="center">
+  <img src="SCH_Schematic2_1-P1_2026-01-08.png" alt="Robot CAD Render" width="700">
+</p>
 
 ### **See It In Action**
 
-\[Link Placeholder: YouTube Demo Video\]_Watch the robot autonomously scan items and update the dashboard in real-time._
+[![Autonomous IoT Inventory Robot Demo](https://img.youtube.com/vi/7Y8p60v4oPw/maxresdefault.jpg)](https://www.youtube.com/watch?v=7Y8p60v4oPw)
 
 **Author:** Shahar Halevi_Computer Engineering Student_
