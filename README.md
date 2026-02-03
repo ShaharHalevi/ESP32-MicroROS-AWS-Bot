@@ -63,4 +63,4 @@ The system is designed with a **hybrid communication architecture** to ensure lo
 
 [![Autonomous IoT Inventory Robot Demo](https://img.youtube.com/vi/7Y8p60v4oPw/maxresdefault.jpg)](https://www.youtube.com/watch?v=7Y8p60v4oPw)
 
-**Authors:** Shahar Halevi adn Adi Shlomo
+**Authors:** Shahar Halevi and Adi Shlomo
